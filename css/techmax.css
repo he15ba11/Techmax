@@ -1,0 +1,725 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+:root {
+  --mainColor: #555555;
+  --buttonColor: #5e87eb;
+  --buttonColor-hover: #3f61b3;
+  --headTitle: #505060;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+p {
+  color: var(--mainColor);
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* ====== small ==== */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* ======= medium ====== */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* ====== large ======= */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* ======= start header ======== */
+header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container nav ul {
+  display: flex;
+}
+header .container nav i {
+  font-size: 33px;
+}
+@media (min-width: 1030px) {
+  header nav .menu {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  header .container nav ul,
+  .h-buttons {
+    display: none;
+  }
+  header nav .menu:hover ~ ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    width: 100%;
+    background-color: white;
+    width: 90%;
+    box-shadow: 2px 2px 17.2px -10.5px var(--mainColor);
+  }
+  header .container nav .menu:hover + ul li {
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--buttonColor);
+  }
+}
+header .container nav ul li:not(li:last-child) {
+  padding-right: 25px;
+}
+header .container nav ul li a,
+header .container nav ul li select {
+  color: #444444;
+  font-size: 17px;
+  font-weight: 500;
+}
+header .container nav ul li select {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+header .container nav ul div.trans,
+header .container nav ul div.trans3 {
+  height: 160px;
+  width: 200px;
+}
+header .container nav ul div.trans,
+header .container nav ul div.trans2,
+header .container nav ul div.trans3 {
+  display: none;
+  background-color: transparent;
+  position: absolute;
+  overflow: hidden;
+}
+header .container nav ul div.serv div,
+header .container nav ul div.page div,
+header .container nav ul div.blog div {
+  padding: 15px 10px;
+}
+header .container nav ul div.serv,
+header .container nav ul div.page,
+header .container nav ul div.blog {
+  background-color: white;
+  width: 90%;
+  position: absolute;
+  top: 30px;
+  left: 3%;
+  transition: 0.5s;
+  box-shadow: 2px 2px 17.2px -10.5px var(--mainColor);
+}
+header .container nav ul div.serv a,
+header .container nav ul div.page a,
+header .container nav ul div.blog a {
+  color: #555555;
+  font-size: 16px;
+  transition: 0.5s;
+}
+header .container nav ul div.serv div:hover,
+header .container nav ul div.page div:hover,
+header .container nav ul div.blog div:hover {
+  background-color: #eee;
+}
+header .container nav ul div.serv div:hover a,
+header .container nav ul div.page div:hover a,
+header .container nav ul div.blog div:hover a {
+  padding-left: 10px;
+}
+header .container nav ul div.services:hover div.trans,
+header .container nav ul div.pages:hover div.trans2,
+header .container nav ul div.Blog:hover div.trans3 {
+  display: block;
+}
+
+header .container nav ul div.trans2 {
+  height: 500px;
+  width: 300px;
+}
+header .h-buttons button {
+  background-color: var(--buttonColor);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  margin-left: 20px;
+  transition: 0.5s ease-in-out;
+}
+header .h-buttons button:hover {
+  background-color: var(--buttonColor-hover);
+}
+/* ============= End Header ============ */
+/* ============= Start main section ============ */
+main {
+  background-image: url(../images/home-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+}
+main .container,
+section.sec-2 .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+main .container .text h1 {
+  font-size: 40px;
+  color: #000000d1;
+}
+main .container .text h1 span {
+  color: var(--buttonColor);
+}
+main .container .text p {
+  max-width: 450px;
+}
+@media (max-width: 768px) {
+  main .container,
+  section.sec-2 .container {
+    grid-template-columns: 1fr;
+  }
+  main .container .text h1 {
+    font-size: 30px;
+  }
+  main .container .text,
+  section.sec-2 .container .text {
+    text-align: center;
+  }
+}
+@media (max-width: 1024px) {
+  section.sec-2 .container {
+    grid-template-columns: 1fr;
+  }
+}
+main .container .text .main-buttons button {
+  padding: 13px 30px;
+  border-radius: 20px;
+  border: none;
+  transition: 0.5s;
+}
+main .container .text .main-buttons button:first-child {
+  background-color: white;
+  box-shadow: 2px 2px 17.2px -10.5px var(--mainColor);
+  margin-right: 20px;
+}
+main .container .text .main-buttons button:first-child a {
+  color: var(--buttonColor);
+  font-weight: 600;
+}
+main .container .text .main-buttons button:last-child {
+  background-color: var(--buttonColor);
+}
+main .container .text .main-buttons button:last-child a {
+  color: white;
+  font-weight: 600;
+}
+main .container .text .main-buttons button:hover {
+  background-color: var(--buttonColor-hover);
+}
+main .container .text .main-buttons button:first-child:hover a {
+  color: white;
+}
+main .container .img,
+main .container .img img,
+section.sec-2 .container .img,
+section.sec-2 .container .img img {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  main .container .img,
+  section.sec-2 .container .img {
+    width: 90%;
+    margin: auto;
+  }
+}
+/* ============== End Main section ========= */
+/* ============== Start first section ========= */
+section.sec-1,
+section.sec-2,
+section.sec-5,
+section.sec-6,
+section.sec-8 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+section.sec-1 .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+section.sec-1 .container div {
+  box-shadow: 2px 2px 17.2px -10.5px var(--mainColor);
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  transition: 0.5s;
+}
+section.sec-1 .container div i {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 20px;
+  color: var(--buttonColor);
+}
+section.sec-1 .container div h4 {
+  font-size: 19px;
+  font-weight: 600;
+}
+section.sec-1 .container div p {
+  line-height: 1.5;
+  color: var(--mainColor);
+  margin: 20px 0;
+}
+section.sec-1 .container div a {
+  font-size: 17px;
+  border-bottom: 1px solid var(--buttonColor);
+  color: var(--buttonColor);
+}
+section.sec-1 .container div:hover {
+  transform: scale(1.02);
+  background-image: linear-gradient(to top right, #5e77e9, #6127df);
+  color: white;
+}
+section.sec-1 .container div:hover p,
+section.sec-1 .container div:hover a {
+  color: white;
+  border-bottom-color: white;
+}
+/* ============== End first section ========= */
+/* ============== Start Second section ========= */
+section.sec-2,
+section.sec-6 {
+  background-color: #f8f8f8;
+}
+section.sec-2 .container .text h2 {
+  margin-bottom: 30px;
+  font-size: 35px;
+  color: #505060;
+}
+section.sec-2 .container .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+section.sec-2 .container .cards .card {
+  background-color: white;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  transition: 0.3s;
+  z-index: 1;
+  border-bottom-right-radius: 15px;
+  border-left: 2px solid var(--buttonColor);
+  color: #505060;
+  box-shadow: -1px 3px 20px 0px rgb(82 90 101 / 10%);
+}
+section.sec-2 .container .cards .card::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-image: linear-gradient(to right, var(--buttonColor), #6123de);
+  border-bottom-right-radius: 15px;
+  transition: 0.3s;
+}
+section.sec-2 .container .cards div:first-child {
+  color: white;
+  background: linear-gradient(to right, var(--buttonColor), #6123de);
+}
+section.sec-2 .container .cards .card:hover:after {
+  left: 0;
+  width: 100%;
+}
+section.sec-2 .container .cards .card:hover {
+  color: white;
+}
+/* ============== End Second section ========= */
+/* ============== Start Third section ========= */
+section.sec-3 {
+  background-color: white;
+}
+/* ============== End Third section ========= */
+/* ============== Start Forth section ========= */
+section.sec-4,
+section.sec-7,
+section.sec-last {
+  background-image: linear-gradient(to right, #5e87eb6b, #6123de66),
+    url("../images/banner-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+section.sec-4 {
+  background-attachment: fixed;
+  padding: 120px 0;
+}
+section.sec-4 .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+section.sec-4 .container .info h4 {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+section.sec-4 .container .info span {
+  font-size: 20px;
+  font-weight: bold;
+}
+/* ============== End Forth section ========= */
+
+/* ============== Start section 5 ========= */
+section.sec-5 .container h2,
+section.sec-6 .container h2,
+section.sec-8 .container h2 {
+  text-align: center;
+  color: var(--headTitle);
+  font-size: 35px;
+}
+section.sec-5 .container .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+section.sec-5 .container .cards .card {
+  position: relative;
+}
+section.sec-5 .container .cards .card .socail a {
+  color: white;
+}
+section.sec-5 .container .cards .card .socail {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 10;
+}
+section.sec-5 .container .cards .card .socail i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+section.sec-5 .container .cards .card:hover::after,
+section.sec-5 .container .cards .card:hover .socail {
+  display: block;
+}
+section.sec-5 .container .cards .card img {
+  width: 100%;
+}
+section.sec-5 .container .cards .card::after {
+  content: "";
+  width: 100%;
+  height: calc(100% - 67px);
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(to top, #5e87eba3, #6123de9e);
+  display: none;
+  z-index: 5;
+}
+section.sec-5 .container .cards .card .info {
+  margin-top: 10px;
+}
+section.sec-5 .container .cards .card .info p {
+  text-align: center;
+  margin-bottom: 0px;
+}
+section.sec-5 .container .cards .card .info p.name {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+section.sec-5 .container .cards .card .info p.jop {
+  color: var(--buttonColor);
+  font-weight: bold;
+}
+/* ============== End section 5 ========= */
+/* ============== Start section 6 ========= */
+section.sec-6 .container .cards,
+section.sec-8 .container .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+section.sec-6 .container .cards .card,
+section.sec-8 .container .cards .card {
+  box-shadow: -1px 3px 20px 0px rgb(82 90 101 / 10%);
+  text-align: center;
+}
+section.sec-6 .container .cards .card {
+  padding: 25px;
+}
+section.sec-6 .container .cards .card .stars i {
+  color: #ffce39;
+}
+section.sec-6 .container .cards .card p {
+  margin-top: 10px;
+}
+section.sec-6 .container .cards .card img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+section.sec-6 .container .cards .card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+section.sec-6 .container .cards .card h6 {
+  font-size: 13px;
+}
+section.sec-6 .container .cards .card h4,
+section.sec-6 .container .cards .card h6 {
+  color: var(--headerColor);
+}
+/* ============== End section 6 ========= */
+
+/* ============== Start section 7 ========= */
+section.sec-7 {
+  padding: 70px 0;
+}
+section.sec-7 .container {
+  margin: auto;
+  text-align: center;
+}
+section.sec-7 .container .info h2 {
+  font-size: 35px;
+}
+section.sec-7 .container .info p {
+  color: white;
+  font-size: 18px;
+  max-width: 65%;
+  margin: 20px auto;
+}
+section.sec-7 .container .info button {
+  background-color: white;
+  color: var(--buttonColor);
+}
+section.sec-7 .container .info button,
+section.sec-8 .container .cards .card button {
+  border: none;
+  padding: 15px 45px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+section.sec-7 .container .info button:hover {
+  background-color: var(--buttonColor-hover);
+  color: white;
+  border-right: 0.3px solid white;
+  border-left: 0.3px solid white;
+  cursor: pointer;
+}
+/* ============== End section 7 ========= */
+
+/* ============== Start section 8 ========= */
+section.sec-8 .container .cards .card {
+  padding-bottom: 20px;
+}
+section.sec-8 .container .cards .card div {
+  width: 100%;
+}
+section.sec-8 .container .cards .card div img {
+  width: 100%;
+}
+section.sec-8 .container .cards .card h5 {
+  font-size: 20px;
+  color: #444444;
+  line-height: 1.5;
+  font-weight: 500;
+}
+section.sec-8 .container .cards .card h5:hover {
+  color: var(--buttonColor);
+  cursor: pointer;
+}
+section.sec-8 .container .cards .card p {
+  font-size: 17px;
+  max-width: 300px;
+  margin: 15px auto;
+}
+section.sec-8 .container .cards .card button {
+  color: white;
+  background-color: var(--buttonColor);
+  cursor: pointer;
+}
+section.sec-8 .container .cards .card button:hover {
+  background-color: var(--buttonColor-hover);
+}
+/* ============== End section 8 ========= */
+
+/* ============== Start last section  ========= */
+section.sec-last {
+  padding: 100px 0;
+}
+section.sec-last .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 30px;
+}
+@media (max-width: 1020px) {
+  section.sec-last .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  section.sec-last .container {
+    grid-template-columns: 1fr;
+  }
+}
+section.sec-last .container div h3 {
+  padding-bottom: 11px;
+  font-size: 21px;
+  border-bottom: 1px solid;
+}
+section.sec-last .container div p {
+  color: white;
+  margin: 25px 0;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}
+section.sec-last .container div .socail a {
+  color: var(--buttonColor);
+}
+section.sec-last .container div .socail a i {
+  padding: 10px;
+  background-color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+section.sec-last .container div .socail a:hover {
+  color: white;
+}
+section.sec-last .container div .socail a:hover i {
+  background-color: var(--buttonColor);
+}
+section.sec-last .container div a {
+  color: white;
+  display: inline-block;
+  margin-top: 25px;
+}
+section.sec-last .container div div span {
+  font-weight: 600;
+}
+section.sec-last .container div .email {
+  margin-bottom: 25px;
+}
+section.sec-last .container div form {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 3fr 1.5fr;
+}
+
+section.sec-last .container div form input[type="email"] {
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+}
+section.sec-last .container div form input[type="submit"] {
+  padding: 15px 20px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background-color: var(--buttonColor);
+}
+section.sec-last .container div form input[type="submit"]:hover {
+  background-color: var(--buttonColor-hover);
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  section.sec-last .container div form {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  section.sec-last .container div form input[type="email"] {
+    border-radius: 5px 5px 5px 5px;
+  }
+  section.sec-last .container div form input[type="submit"] {
+    border-radius: 5px 5px 5px 5px;
+  }
+}
+/* ============== End last section  ========= */
+
+/* ============== Start footer  ========= */
+footer {
+  background-color: #0e1326;
+  padding: 25px;
+  position: relative;
+}
+footer div.container {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+footer div.container div {
+  margin: auto;
+}
+footer div.container div span:hover {
+  color: var(--buttonColor);
+  cursor: pointer;
+}
+footer button {
+  position: absolute;
+  right: 35px;
+  bottom: 15px;
+  background-color: var(--buttonColor);
+  border: none;
+  padding: 6px 13px;
+  border-radius: 5px;
+  transition: 0.5s ease;
+}
+footer button a {
+  color: white;
+}
+footer button:hover {
+  background-color: #444444;
+}
+@media (max-width: 767px) {
+  footer button {
+    right: 12px;
+    bottom: 36px;
+  }
+}
+/* ============== End footer  ========= */
